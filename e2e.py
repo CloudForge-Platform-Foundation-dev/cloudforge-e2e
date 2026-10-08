@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """CloudForge cross-studio e2e check (stdlib only).
 
 Runs against services that are ALREADY running locally:
@@ -63,7 +63,7 @@ def report(kind, name, detail=""):
 
 
 def check(name, got, expected):
-    ok = got in expected if isinstance(expected, (tuple, list, set)) else got == expected
+    ok = got == expected if isinstance(expected, (tuple, list, set)) else got == expected
     report("PASS" if ok else "FAIL", name, "" if ok else f"expected {expected}, got {got}")
     return ok
 
